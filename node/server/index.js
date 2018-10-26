@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const WeDeploy = require('wedeploy');
 const _ = require('underscore');
+
+app.use(cors());
 
 app.get('/company-summary', (req, res) => {
     getCompanySummary().then(result => {
