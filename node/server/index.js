@@ -70,7 +70,7 @@ function getSpecialtiesByMonth() {
             });
 
             Object.keys(dataBySpecialty).forEach(specialty => {
-                dataBySpecialty[specialty] = _.groupBy(dataBySpecialty[specialty],
+                dataBySpecialty[specialty] = _.countBy(dataBySpecialty[specialty],
                     (appointment) => {
                         return new Date(appointment['date']).getMonth();
                     });
